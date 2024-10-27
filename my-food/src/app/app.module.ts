@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { RatingModule } from 'primeng/rating';
+import { RatingModule } from 'ng-starrating';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -16,8 +18,10 @@ import { RatingModule } from 'primeng/rating';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule, // Add ReactiveFormsModule here
-    RatingModule
+    ReactiveFormsModule, 
+    RatingModule, 
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

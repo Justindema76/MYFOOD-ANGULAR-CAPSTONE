@@ -11,6 +11,7 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 export class HomeComponent implements OnInit {
   foods: Food[] = [];
   formGroup!: FormGroup;
+  ratingControl = new FormControl(3)
 
   constructor(private foodService: FoodService, private fb: FormBuilder) {}
 
