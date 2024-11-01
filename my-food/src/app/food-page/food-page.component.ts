@@ -1,26 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { Food } from '../shared/models/food';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from '../services/cart/cart.service';
 import { FoodService } from '../services/food/food.service';
+import { Food } from '../shared/models/food';
 
 @Component({
   selector: 'app-food-page',
   templateUrl: './food-page.component.html',
-  styleUrl: './food-page.component.css'
+  styleUrls: ['./food-page.component.css']
 })
-export class FoodPageComponent implements OnInit{
-  food!:Food;
-  constructor(private activatedRoute:ActivatedRoute, 
-    private foodservice: FoodService){
+export class FoodPageComponent implements OnInit {
+  getAll() {
+    throw new Error('Method not implemented.');
+  }
+
+  food!: Food;
+  constructor(private activatedRoute:ActivatedRoute,
+    private foodService: FoodService,
+    private cartService: CartService,
+    private router: Router) { 
     activatedRoute.params.subscribe((params) => {
       if(params['id'])
-        this.food = foodservice.getFoodById(params['id']);
+      this.food = foodService.getFoodById(params['id']);
     })
+
   }
-  
-  
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  }
+
+  addToCart(){
+    this.cartService.addToCart(this.food);
+    this.router.navigateByUrl('/cart-page');
   }
 
 }
