@@ -2,38 +2,34 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart/cart.service';
 import { Cart } from '../shared/models/cart';
 import { CartItem } from '../shared/models/cartItem';
-import { FoodPageComponent } from '../food-page/food-page.component';
-import { FoodService } from '../services/food/food.service';
 
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
-  styleUrl: './cart-page.component.css'
+  styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent implements OnInit {
-  cart!:Cart;
+  cart!: Cart;
 
-  constructor(private cartService:CartService){
-
+  constructor(private cartService: CartService) {
     this.setCart();
-   }
-  
+  }
+
   ngOnInit(): void {
   }
-  
-  removeFromCart(cartItem:CartItem){
+
+  removeFromCart(cartItem: CartItem) {
     this.cartService.removeFromCart(cartItem.food.id);
     this.setCart();
   }
 
-  changeQuantity(cartItem:CartItem, quantityInString:string){
-    const quantity=parseInt(quantityInString);
-    this.cartService.changeQuantity(cartItem.food.id, quantity)
-    this.setCart();
+  changeQuantity(cartItem: CartItem, quantityInString: string) {
+    const quantity = parseInt(quantityInString);
+    this.cartService.changeQuantity(cartItem.food.id, quantity);
+    this.setCart(); // This line is optional if you're using BehaviorSubject.
   }
 
-  setCart(){
+  setCart() {
     this.cart = this.cartService.getCart();
   }
-
 }

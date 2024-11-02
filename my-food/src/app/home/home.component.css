@@ -7,8 +7,8 @@ ul{
   padding: 0;
 }
 
-ul li a{
-  height: 20rem;
+ul li .container{
+  height: 25rem;
   width: 20rem;
   border: 1px solid whitesmoke;
   border-radius: 1rem;
@@ -19,7 +19,7 @@ ul li a{
   color: #e72929;
 }
 
-li a :hover{
+li .container :hover{
   opacity: 90%;
   cursor: pointer;
 }
@@ -73,3 +73,17 @@ li a :hover{
   margin-top: .7rem;
 }
 
+.container button{
+  color: white;
+  background: #e72929;
+  border: none;
+  font-size: 1.2rem;
+  padding: .5rem;
+  border-radius: 10rem;
+  outline: none;
+}
+
+.container button:hover{
+  opacity: .9;
+  cursor: pointer;
+}

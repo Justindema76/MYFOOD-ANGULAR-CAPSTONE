@@ -4,7 +4,15 @@
     <nav>
       <ul>
         <li>
-          <a href="#" routerLink="/cart-page" class="">Cart</a>
+          <a href="#" routerLink="/cart-page">
+            <i class="fas fa-shopping-cart"></i> Cart
+            <span class="badge">{{ cartItemCount }}</span>
+           Total
+            <span class="badge">{{ cart.totalPrice | currency }}</span>
+          </a>
+        </li>
+        <li>
+
         </li>
       </ul>
     </nav>

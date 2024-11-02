@@ -25,11 +25,11 @@ div button{
   border: none;
   background-color: #e72929;
   color: white;
-  opacity: .8;
+  opacity: 1;
   outline: none;
 }
 
 div button:hover{
-  opacity: 1;
+  opacity: .9;
   cursor: pointer;
 }
