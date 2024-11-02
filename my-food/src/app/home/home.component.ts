@@ -40,7 +40,6 @@ export class HomeComponent {
       }
     });
   }
-  foodPageTags: string[] = ['All', 'FastFood', 'Pizza', 'Lunch', 'SlowFood', 'Hamburger', 'Fry', 'Soup']; // Example tags
 
   addToCart(food: Food) { // Pass the food item to add to cart
     this.cartService.addToCart(food); // Add the food item to the cart

@@ -25,11 +25,18 @@ export class FoodService {
     );
   }
 
-// FoodService method example
-getAllTags(): Observable<Tag[]> {
-  return this.http.get<Tag[]>('path/to/your/data.json'); // Adjust the URL accordingly
-}
-
+  getAllTags(): Tag[] {
+    return [
+      { name: 'All', count: 14 },
+      { name: 'FastFood', count: 4 },
+      { name: 'Pizza', count: 2 },
+      { name: 'Lunch', count: 3 },
+      { name: 'SlowFood', count: 2 },
+      { name: 'Hamburger', count: 1 },
+      { name: 'Fry', count: 1 },
+      { name: 'Soup', count: 1 },
+    ];
+  }
 
   getAllFoodsByTag(tag: string): Observable<Food[]> {
     return this.http.get<Food[]>(this.apiUrl).pipe(
