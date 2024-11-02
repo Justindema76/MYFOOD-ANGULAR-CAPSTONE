@@ -1,39 +1,74 @@
-<app-not-found [visible]="!cart || cart.items.length <= 0"
+<app-not-found 
+  [visible]="!cart || cart.items.length <= 0"
   notFoundMessage="Cart Is Empty"
   resetLinkText="Return to Home"
 ></app-not-found> 
 
-<div *ngIf="cart && cart.items.length > 0" class="container">
-  <ul>
-    <li *ngFor="let cartItem of cart.items">
-      <div>
-        <img [src]="cartItem.food.imageUrl" alt="{{ cartItem.food.name }}">
-      </div>
+<div *ngIf="cart && cart.items.length > 0" class="container text-center">
+  <h3>Your Cart</h3>
+  <table class="table table-bordered table-striped p-2 mx-auto" style="width: 100%;"> <!-- Increased width to 90% -->
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+        <th class="text-center">Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cartItem of cart.items">
+        <td style="display: flex; justify-content: center; align-items: center;">
+          <img [src]="cartItem.food.imageUrl" alt="{{ cartItem.food.name }}" style="width: 80px; border-radius: 100%; height: auto;">
+        </td>
+        <td>
+          <a routerLink="/food/{{ cartItem.food.id }}">
+            {{ cartItem.food.name }}
+          </a>
+        </td>
+        <td>
+          <input type="number" 
+                 [(ngModel)]="cartItem.quantity" 
+                 (ngModelChange)="changeQuantity(cartItem, $event)" 
+                 min="1" 
+                 class="form-control-sm" 
+                 style="width: 60px; margin: 0 auto;" /> <!-- Center the input -->
+        </td>
+        <td>
+          {{ cartItem.price | currency }}
+        </td>
+        <td>
+          {{ (cartItem.price * cartItem.quantity) | currency }}
+        </td>
+        <td class="text-center">
+          <button class="btn btn-danger btn-sm" (click)="removeFromCart(cartItem)">
+            Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4" class="text-end">Total:</td>
+        <td class="">
+            {{cart.totalPrice | currency:"CAD":"symbol":"1.2-2" }} <!-- Total Price -->
+        </td>
+        <td></td> <!-- Empty cell for alignment -->
+      </tr>
+    </tfoot>
+  </table>
 
-      <div>
-        <a routerLink="/food/{{ cartItem.food.id }}">
-          {{ cartItem.food.name }}
-        </a>
-      </div>
-
-      <div>
-        <select #quantitySelect (change)="changeQuantity(cartItem, quantitySelect.value)">
-          <option *ngFor="let qty of [1, 2, 3, 4, 5]" [value]="qty">{{ qty }}</option>
-        </select>
-      </div>
-
-      <div>
-        {{ cartItem.price | currency }}
-      </div>
-
-      <div>
-        <button class="remove-button" (click)="removeFromCart(cartItem)">
-          Remove
-        </button>
-      </div>
-    </li>
-  </ul>
-
-
- 
+  <div class="text-center mt-3 ">
+    <button class="btn btn-danger btn-sm" routerLink="/">
+      Continue Shopping
+    </button>
+    <button class="btn btn-danger btn-sm" 
+            routerLink="/checkout" 
+            [disabled]="cart.items.length == 0"
+            style="margin-left: 1rem;"> <!-- Space between buttons -->
+      Checkout
+    </button>
+    <button class="btn btn-danger btn-sm"  style="margin-left: 1rem;">Clear Cart</button> <!-- New Clear Cart button -->
+  </div>
 </div>

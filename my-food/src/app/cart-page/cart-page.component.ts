@@ -32,4 +32,6 @@ export class CartPageComponent implements OnInit {
   setCart() {
     this.cart = this.cartService.getCart();
   }
+
+
 }

@@ -5,22 +5,28 @@ import { FoodService } from '../services/food/food.service';
 @Component({
   selector: 'app-tags',
   templateUrl: './tags.component.html',
-  styleUrl: './tags.component.css'
+  styleUrls: ['./tags.component.css']
 })
 export class TagsComponent implements OnInit {
+  
+  @Input()
+  foodPageTags?: string[];
 
   @Input()
-  foodPageTags?:string[];
+  justifyContent: string = 'center';
 
-  @Input()
-  justifyContent:string = 'center';
-
-  tags?:Tag[];
-  constructor(private foodService:FoodService) { }
+  tags: Tag[] = []; // Initialize tags as an empty array
+  
+  constructor(private foodService: FoodService) { }
 
   ngOnInit(): void {
-    if(!this.foodPageTags)
-     this.tags = this.foodService.getAllTags();
+    if (!this.foodPageTags) {
+      this.foodService.getAllTags().subscribe((tags: Tag[]) => {
+        this.tags = tags; // Assign tags from the service
+        console.log('Tags:', this.tags); // Check if tags are received
+      });
+    } else {
+      this.tags = this.foodPageTags.map(tag => ({ name: tag, count: 0 }));
+    }
   }
-
 }

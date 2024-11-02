@@ -1,13 +1,15 @@
-.container{
+/* .container{
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   margin: 1.5rem;
-}
+} */
+
+
 a{
   color: #e72929;
 }
-ul{
+/* ul{
   display: flex;
   flex-direction: column;
   flex: 3 0;
@@ -17,26 +19,26 @@ ul{
   list-style-type: none;
   margin: .5rem;
   padding: 0;
-}
+} */
 
-ul li{
+/* ul li{
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   border-bottom: 1px solid #e4e4e4;
-}
+} */
 
 ul li:last-child{
  border: none; 
 }
 
-ul li img{
+/* ul li img{
   width: 5rem;
   height: 5rem;
   border-radius: 100rem;
   object-fit: cover;
-}
+} */
 
 ul li div{
   padding: 1rem;
