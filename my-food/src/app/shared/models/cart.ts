@@ -1,6 +1,9 @@
 import { CartItem } from "./cartItem";
 
 export class Cart {
+  clear() {
+    throw new Error("Method not implemented.");
+  }
   items: CartItem[] = [];
 
 

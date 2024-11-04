@@ -1,0 +1,45 @@
+<h2>Food Management</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let food of foods">
+      <td>{{ food.id }}</td>
+      <td>{{ food.name }}</td>
+      <td>{{ food.price | currency }}</td>
+      <td>
+        <button (click)="editFood(food)">Edit</button>
+        <button (click)="deleteFood(food.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>{{ editing ? "Edit" : "Create" }} Food</h3>
+
+<form (ngSubmit)="saveFood()">
+  <label>
+    Name:
+    <input [(ngModel)]="foodForm.name" name="name" required />
+  </label>
+  
+  <label>
+    Price:
+    <input type="number" [(ngModel)]="foodForm.price" name="price" required />
+  </label>
+
+  <label>
+    Tags (comma-separated):
+    <input [(ngModel)]="foodForm.tags" name="tags" placeholder="e.g., FastFood, Pizza" />
+  </label>
+
+  <button type="submit">{{ editing ? "Save" : "Create" }}</button>
+  <button type="button" (click)="createNewFood()">Cancel</button>
+</form>

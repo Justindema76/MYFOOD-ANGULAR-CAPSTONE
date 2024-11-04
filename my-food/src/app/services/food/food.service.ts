@@ -35,6 +35,8 @@ export class FoodService {
       { name: 'Hamburger', count: 1 },
       { name: 'Fry', count: 1 },
       { name: 'Soup', count: 1 },
+      { name: 'Breakfast', count: 1 },
+      { name: 'Dinner', count: 1 },
     ];
   }
 
@@ -49,4 +51,16 @@ export class FoodService {
   getAll(): Observable<Food[]> {
     return this.http.get<Food[]>(this.apiUrl);
   }
+  deleteFood(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+  
+  addFood(food: Food): Observable<Food> {
+    return this.http.post<Food>(this.apiUrl, food);
+  }
+  
+  updateFood(food: Food): Observable<Food> {
+    return this.http.put<Food>(`${this.apiUrl}/${food.id}`, food);
+  }
+  
 }

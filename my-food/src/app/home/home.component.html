@@ -1,4 +1,5 @@
 <!-- home.component.html -->
+
 <app-search></app-search>
 <app-tags></app-tags>
 
@@ -12,9 +13,9 @@
         <div class="name">
           {{ food.name }}
         </div>
-        <span class="favorite {{ food.favorite ? '' : 'not' }}">
+        <!-- <span class="favorite {{ food.favorite ? '' : 'not' }}">
           ❤
-        </span>
+        </span> -->
         <div class="stars">
           <!-- Star rating implementation goes here -->
         </div>
@@ -43,3 +44,6 @@
 
   </li>
 </ul>
+<button class="btn btn-danger mt-5" routerLink="/admin">
+  Admin
+  </button>
