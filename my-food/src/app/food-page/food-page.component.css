@@ -39,6 +39,10 @@ img{
   font-size: 2rem;
   font-weight: bold;
 }
+.details .description{
+  margin: 1rem 0;
+  font-weight: 300;
+}
 
 .details .favorite{
   color: #e72929;
@@ -98,5 +102,4 @@ img{
   opacity: .9;
   cursor: pointer;
 }
-
 

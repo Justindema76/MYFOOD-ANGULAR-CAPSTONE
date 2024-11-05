@@ -10,24 +10,18 @@
           <span class="name">
               {{food.name}}
           </span>
-          <!-- <span class="favorite {{food.favorite?'':'not'}}">
-              ❤
-          </span> -->
+         
       </div>
-      
-      <div class="origins">
-          <span *ngFor="let origin of food.origins">
-              {{origin}}
-          </span>
+      <div class="description">
+        {{ food.description }}
       </div>
-
       <div class="tags">
           <app-tags [foodPageTags]="food.tags" justifyContent="start"></app-tags>
       </div>
 
       <div class="cook-time">
           <span>
-              Time to cook about <strong>{{food.cookTime}}</strong> minutes 
+              Ready in <strong>{{food.cookTime}}</strong> minutes 
           </span>
       </div>
 

@@ -19,6 +19,11 @@ ul li .container{
   color: #e72929;
 }
 
+ul li .container img{
+  min-height: 200px;
+  max-height: 200px;
+}
+
 li .container :hover{
   opacity: 90%;
   cursor: pointer;
@@ -71,6 +76,12 @@ li .container :hover{
 .price{
   color:#414141;
   margin-top: .7rem;
+}
+
+.description{
+  color:#414141;
+  margin-top: .7rem;
+  font-size: .9rem;
 }
 
 .container button{

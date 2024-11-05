@@ -3,7 +3,7 @@ export class Food {
   name!: string;
   price!: number;
   tags: string[] = []; // Initialize as an empty array
-  stars!: number;
+ description!: string;
   imageUrl!: string;
   origins: string[] = [];
   cookTime!: string;

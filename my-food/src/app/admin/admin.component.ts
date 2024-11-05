@@ -30,7 +30,7 @@ export class AdminComponent implements OnInit {
       name: '',
       price: 0,
       tags: [],
-      stars: 0,
+      description: '',
       imageUrl: '',
       origins: [],
       cookTime: ''

@@ -3,34 +3,81 @@
     {
       "id": "1",
       "name": "Pepperoni Pizza",
+      "description": "A classic favorite, our pepperoni pizza features a crispy, golden crust topped with rich tomato sauce, a generous layer of melted mozzarella, and perfectly seasoned pepperoni slices. Baked to perfection, each bite delivers a savory and satisfying experience with just the right hint of spice. Perfect for sharing or savoring solo!",
       "price": 13.2,
      "tags": [
-        "SlowFood",
-        "Lunch"
+        "Pizza"
       ],
       "favorite": false,
-      "stars": 4.5,
-      "imageUrl": "/assets/images/foods/food-1.jpg",
+      
+      "imageUrl": "/assets/images/foods/pizza1.jpg",
       "origins": [
         "Italy"
       ],
       "cookTime": "10-20"
     },
     {
+      "id": "6",
+      "name": "Vegetarian Pizza",
+      "description": "Our delicious Vegetarian Pizza is loaded with fresh, colorful veggies atop a hand-tossed crust. Featuring a savory tomato sauce, melted mozzarella, and a medley of toppings like bell peppers, mushrooms, onions, black olives, and juicy tomatoes. This pizza is a delightful blend of flavors and textures, perfect for veggie lovers looking for a hearty, satisfying slice!",
+      "price": 15,
+      "tags": [
+        "Pizza"
+      ],
+      "favorite": false,
+      
+      "imageUrl": "/assets/images/foods/pizza2.jpg",
+      "origins": [
+        "Italy"
+      ],
+      "cookTime": "15-20"
+    },
+    {
+      "id": "8",
+      "name": "Meat Lovers Pizza",
+      "description": "Our Meat Lovers Pizza is a hearty delight piled high with premium meats for a bold, savory experience. Enjoy a golden, crispy crust topped with zesty tomato sauce, melted mozzarella, and a mouthwatering mix of pepperoni, sausage, ham, and bacon. Each bite is packed with rich, smoky flavors that make this pizza a must-have for meat enthusiasts!",
+      "price": 17.5,
+      "tags": [
+        "Pizza"
+      ],
+      "favorite": false,
+      "stars": 4,
+      "imageUrl": "/assets/images/foods/pizza3.jpg",
+      "origins": [
+        "Italy"
+      ],
+      "cookTime": "15-25"
+    },
+    {
+      "id": "9",
+      "name": "Hawaiian Pizza",
+      "description": "Our Hawaiian Pizza is a perfect blend of sweet and savory, featuring a crispy crust layered with rich tomato sauce, gooey mozzarella, and a delicious combination of juicy pineapple and smoky ham. Each bite offers a refreshing twist of tropical sweetness balanced with the savory flavors of melted cheese and ham. Its a unique, crowd-pleasing choice for those who love a little sweetness on their pizza!",
+      "price": 17,
+      "tags": [
+       
+        "Pizza"
+        
+      ],
+      "favorite": false,
+      "stars": 4,
+      "imageUrl": "/assets/images/foods/pizza4.jpg",
+      "origins": [
+        "Italy"
+      ],
+      "cookTime": "20-30"
+    },
+    {
       "id": "2",
-      "name": "Meatball",
+      "name": "Spagetti & Meatballs",
       "price": 18,
       "tags": [
-        "SlowFood",
-        "Lunch"
+        "Pasta"
       ],
       "favorite": true,
       "stars": 4.7,
-      "imageUrl": "/assets/images/foods/food-2.jpg",
+      "imageUrl": "/assets/images/foods/pasta1.jpg",
       "origins": [
-        "Persia",
-        "Middle East",
-        "China"
+        "Italy"
       ],
       "cookTime": "20-30"
     },
@@ -39,7 +86,7 @@
       "name": "Hamburger",
       "price": 5,
       "tags": [
-        "FastFood",
+        "Lunch, Dinner",
         "Hamburger"
       ],
       "favorite": false,
@@ -73,7 +120,7 @@
       "name": "Chicken Soup",
       "price": 11,
       "tags": [
-        "SlowFood",
+        "Lunch",
         "Soup"
       ],
       "favorite": false,
@@ -85,23 +132,7 @@
       ],
       "cookTime": "40-50"
     },
-    {
-      "id": "6",
-      "name": "Vegetables Pizza",
-      "price": 9,
-      "tags": [
-        "FastFood",
-        "Pizza",
-        "Lunch"
-      ],
-      "favorite": false,
-      "stars": 4,
-      "imageUrl": "/assets/images/foods/food-6.jpg",
-      "origins": [
-        "Italy"
-      ],
-      "cookTime": "40-50"
-    },
+    
     {
       "id": "7",
       "name": "MeatLoaf",
@@ -109,7 +140,7 @@
       "tags": [
         "Belgium",
         "Meatloaf",
-        "Lunch"
+        "Dinner"
       ],
       "favorite": false,
       "stars": 4,

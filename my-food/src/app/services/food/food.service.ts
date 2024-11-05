@@ -27,16 +27,13 @@ export class FoodService {
 
   getAllTags(): Tag[] {
     return [
-      { name: 'All', count: 14 },
-      { name: 'FastFood', count: 4 },
-      { name: 'Pizza', count: 2 },
-      { name: 'Lunch', count: 3 },
-      { name: 'SlowFood', count: 2 },
-      { name: 'Hamburger', count: 1 },
-      { name: 'Fry', count: 1 },
-      { name: 'Soup', count: 1 },
-      { name: 'Breakfast', count: 1 },
-      { name: 'Dinner', count: 1 },
+      { name: 'All'},
+      { name: 'Burgers'},
+      { name: 'Pizza'},
+      { name: 'Pasta'},
+      { name: 'Deserts'},
+      
+      
     ];
   }
 
